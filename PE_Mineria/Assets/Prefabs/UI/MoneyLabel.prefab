@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4620908005816301662
+--- !u!1001 &4897612938248997709
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -88,15 +88,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2416435269679207292, guid: e64e23c6dac89ba49b2e3da125935753, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 59.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416435269679207292, guid: e64e23c6dac89ba49b2e3da125935753, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 6506013820134593269, guid: e64e23c6dac89ba49b2e3da125935753, type: 3}
       propertyPath: m_Text
-      value: 'Day Cycle: Morning
+      value: 'Money:
+
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 8243237912790458599, guid: e64e23c6dac89ba49b2e3da125935753, type: 3}
       propertyPath: m_Name
-      value: DayCycleLabel
+      value: MoneyLabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
