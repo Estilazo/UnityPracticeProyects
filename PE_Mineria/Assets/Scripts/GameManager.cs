@@ -6,11 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField]
-    private CycleManager cycleManager;
+    [SerializeField] private CycleManager cycleManager;
 
-    [SerializeField]
-    private UIManager uimanager;
+    [SerializeField] private UIManager uimanager;
 
     private void Awake()
     {
