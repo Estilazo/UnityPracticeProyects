@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6fac610db3224a4bb2b4ace8af1235f, type: 3}
-  m_Name: MineralVars
+  m_Name: Expensivius200
   m_EditorClassIdentifier: 
-  mineralType: 0
-  mineralValue: 0
+  mineralType: 7
+  mineralValue: 800
+  mineralColor: {r: 0.728847, g: 0, b: 1, a: 0}

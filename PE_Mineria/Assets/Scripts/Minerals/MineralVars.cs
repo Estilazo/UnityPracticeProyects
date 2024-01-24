@@ -5,14 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MineralVars", menuName = "Game/Mineral Variables")]
 public class MineralVars : ScriptableObject
 {
-    [SerializeField]
-    private Minerals mineralType;
+    public Minerals mineralType;
 
-    [SerializeField]
-    private float mineralValue;
+    public float mineralValue;
 
-    [SerializeField]
-    private Dictionary<Minerals , Color> mineralColors;
-
+    public Color mineralColor;
 
 }

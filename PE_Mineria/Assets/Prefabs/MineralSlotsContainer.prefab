@@ -55,7 +55,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mineralSlots: []
-  mineralVars: []
+  mineralVars:
+  - {fileID: 11400000, guid: 863ac440869bcf44ba4abad690b73868, type: 2}
+  - {fileID: 11400000, guid: 4e44fe59c53d068499e9c0522afe2e40, type: 2}
+  - {fileID: 11400000, guid: fa4eceecb0bdb6d44adaef46b0fff266, type: 2}
+  - {fileID: 11400000, guid: ba5bfefd39695ec459d24b44aac44417, type: 2}
+  - {fileID: 11400000, guid: 8559fc6afde273a42bbad51c5bac498b, type: 2}
+  - {fileID: 11400000, guid: 1f0f749f50d881d429a9c7f7a1d2e456, type: 2}
+  - {fileID: 11400000, guid: a498f804283fd7740b3fd84256c15a60, type: 2}
+  - {fileID: 11400000, guid: 49acd1551abc86c43b3d04f1462237be, type: 2}
+  - {fileID: 11400000, guid: 3a02a82321b338e49bbe3a11c1678444, type: 2}
+  - {fileID: 11400000, guid: 94896b2d1e1260f43b80d8f78b788313, type: 2}
 --- !u!1001 &691848850868241237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,6 +121,10 @@ PrefabInstance:
     - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
       propertyPath: m_Name
       value: MineralSlot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -178,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralSlot (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -243,6 +261,10 @@ PrefabInstance:
     - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
       propertyPath: m_Name
       value: MineralSlot (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -310,6 +332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralSlot (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -375,6 +401,10 @@ PrefabInstance:
     - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
       propertyPath: m_Name
       value: MineralSlot (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -442,6 +472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralSlot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -507,6 +541,10 @@ PrefabInstance:
     - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
       propertyPath: m_Name
       value: MineralSlot (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -574,6 +612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralSlot (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -640,6 +682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -705,6 +751,10 @@ PrefabInstance:
     - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
       propertyPath: m_Name
       value: MineralSlot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916034307586255818, guid: e772369b01080934b9c37307274eba28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -12,12 +12,23 @@ public class MineralSlot : MonoBehaviour
 
     [SerializeField] private Minerals slotType;
 
+    [SerializeField] private GameObject mineralPlaneEdge;
+
+    [SerializeField] private GameObject mineralPlane;
+
+    [SerializeField] private GameObject infoCanvas;
+
     public event Action onMineralSlotUnlocked;
 
     private void Awake()
     {
         unlocked = false;
+        infoCanvas.SetActive(false);
         gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
     }
 
     public void UnlockMineralSlot(int day)
@@ -31,6 +42,27 @@ public class MineralSlot : MonoBehaviour
         }
     }
 
+    public void ConfigureMineralSlot(MineralVars vars)
+    {
+        slotType = vars.mineralType;
+        SetMineralColor(vars.mineralColor);
+
+    }
+
+    public void SetMineralColor(Color color)
+    {
+        mineralPlane.GetComponent<Renderer>().material.color = color;
+        mineralPlaneEdge.GetComponent<Renderer>().material.color = color;
+    }
+
+    public void OnMouseOver()
+    {
+        infoCanvas.SetActive(true);
+    }
+    public void OnMouseExit()
+    {
+        infoCanvas.SetActive(false);
+    }
 
 
 }
