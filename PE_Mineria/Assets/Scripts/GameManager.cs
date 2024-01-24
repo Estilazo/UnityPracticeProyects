@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private UIManager uimanager;
 
-    [SerializeField] private Dictionary<Minerals, Color> mineralColors;
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -30,13 +28,5 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("starts");
-    }
-
-    public void SetupColorDictionary(List<MineralVars> minerals)
-    {
-        foreach (MineralVars mineral in minerals)
-        {
-            mineralColors.Add(mineral.mineralType, mineral.mineralColor);
-        }
     }
 }

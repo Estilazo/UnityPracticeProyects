@@ -10,6 +10,18 @@ public class MachineryManager : MonoBehaviour
     [SerializeField]
     private GameObject machineryPrefab;
 
+    [SerializeField] private Dictionary<Minerals, Color> mineralColors;
+
+    public void SetupColorDictionary(List<MineralVars> minerals)
+    {
+        mineralColors = new Dictionary<Minerals, Color>();
+
+        foreach (MineralVars mineral in minerals)
+        {
+            mineralColors.Add(mineral.mineralType, mineral.mineralColor);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -7,7 +7,7 @@ public class MineralSlotsManager : MonoBehaviour
 
     [SerializeField] private MineralSlot[] mineralSlots;
 
-    [SerializeField] private List<MineralVars> mineralVars;
+    public List<MineralVars> mineralVars;
 
 
     private void Awake()
@@ -19,7 +19,11 @@ public class MineralSlotsManager : MonoBehaviour
     {
         SusbcribeMineralSlots();
         SetupMineralSlots();
-        GameManager.Instance.SetupColorDictionary(mineralVars);
+
+        if(mineralVars != null)
+        {
+            GetComponent<MachineryManager>().SetupColorDictionary(mineralVars);
+        }
     }
 
     private void SusbcribeMineralSlots()

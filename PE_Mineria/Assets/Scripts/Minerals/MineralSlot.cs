@@ -33,9 +33,9 @@ public class MineralSlot : MonoBehaviour
 
     public void UnlockMineralSlot(int day)
     {
-        Debug.Log("is called");
         if (day == unlockDay)
         {
+            Debug.Log("activates");
             gameObject.SetActive(true);
             unlocked = true;
             onMineralSlotUnlocked?.Invoke();
@@ -46,6 +46,8 @@ public class MineralSlot : MonoBehaviour
     {
         slotType = vars.mineralType;
         SetMineralColor(vars.mineralColor);
+        infoCanvas.GetComponent<SlotInfoManager>().SetMineralInfo(vars);
+
 
     }
 
@@ -63,6 +65,5 @@ public class MineralSlot : MonoBehaviour
     {
         infoCanvas.SetActive(false);
     }
-
 
 }
