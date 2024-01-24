@@ -18,10 +18,13 @@ public class MineralSlot : MonoBehaviour
 
     [SerializeField] private GameObject infoCanvas;
 
+    private bool hasMachine;
+
     public event Action onMineralSlotUnlocked;
 
     private void Awake()
     {
+        hasMachine = false;
         unlocked = false;
         infoCanvas.SetActive(false);
         gameObject.SetActive(false);
@@ -66,4 +69,9 @@ public class MineralSlot : MonoBehaviour
         infoCanvas.SetActive(false);
     }
 
+    public void OnMouseDown()
+    {
+        if (hasMachine) { return; }
+        else Debug.Log("open machinery inventory");
+    }
 }
