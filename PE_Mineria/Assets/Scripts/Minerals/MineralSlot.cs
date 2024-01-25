@@ -20,7 +20,7 @@ public class MineralSlot : MonoBehaviour
 
     private bool hasMachine;
 
-    public event Action onMineralSlotUnlocked;
+    public event Action<Minerals> onMineralSlotUnlocked;
 
     private void Awake()
     {
@@ -41,7 +41,7 @@ public class MineralSlot : MonoBehaviour
             Debug.Log("activates");
             gameObject.SetActive(true);
             unlocked = true;
-            onMineralSlotUnlocked?.Invoke();
+            onMineralSlotUnlocked?.Invoke(slotType);
         }
     }
 
@@ -50,7 +50,7 @@ public class MineralSlot : MonoBehaviour
         slotType = vars.mineralType;
         SetMineralColor(vars.mineralColor);
         infoCanvas.GetComponent<SlotInfoManager>().SetMineralInfo(vars);
-
+        slotType = vars.mineralType;
 
     }
 
@@ -72,6 +72,6 @@ public class MineralSlot : MonoBehaviour
     public void OnMouseDown()
     {
         if (hasMachine) { return; }
-        else Debug.Log("open machinery inventory");
+        else GameManager.Instance.ActivateMachineryInventory();
     }
 }

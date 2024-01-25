@@ -14,19 +14,6 @@ public class SlotInfoManager : MonoBehaviour
 
     private MineralVars mineralVars;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SetMineralInfo(MineralVars vars)
     {
         mineralVars = vars;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class MineralSlotsManager : MonoBehaviour
     [SerializeField] private MineralSlot[] mineralSlots;
 
     public List<MineralVars> mineralVars;
+
+    public event Action<MineralVars> OnMineralSlotUnlocked;
 
 
     private void Awake()
@@ -44,9 +47,10 @@ public class MineralSlotsManager : MonoBehaviour
             }
             else
             {
-                int i = Random.Range(1, mineralSlots.Length);
+                int i = UnityEngine.Random.Range(1, mineralSlots.Length);
                 slot.ConfigureMineralSlot(mineralVars[i]);
             }
+
         }
     }
 }

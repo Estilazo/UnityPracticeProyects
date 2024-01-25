@@ -5,23 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MachineryVars", menuName = "Game/Machinery Variables")]
 public class MachineryVars : ScriptableObject
 {
-    [SerializeField]
-    private Minerals mineralType;
+    public Minerals mineralType;
 
-    [SerializeField]
-    private int machineryID;
+    public int machineryID;
 
-    [SerializeField]
-    private float buyCost;
+    public float buyCost;
 
-    [SerializeField]
-    private string name;
+    public string name;
 
-    [SerializeField]
-    private int workers;
+    public float multiplier;
 
-    [SerializeField]
-    private float multiplier;
 
 
 }

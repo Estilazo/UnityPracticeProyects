@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private UIManager uimanager;
 
+    [SerializeField] private GameObject machineryInventory;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -28,5 +30,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("starts");
+    }
+
+    public void ActivateMachineryInventory()
+    {
+        machineryInventory.SetActive(true);
     }
 }
