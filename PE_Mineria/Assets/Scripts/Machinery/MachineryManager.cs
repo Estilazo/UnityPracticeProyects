@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MachineryManager : MonoBehaviour
 {
-    [SerializeField] private GameObject machineryPrefab;
-
     [SerializeField] private MachineryInventoryManager inventoryManager;
 
     [SerializeField] private List<MachineryVars> machineryVars;
@@ -14,6 +12,11 @@ public class MachineryManager : MonoBehaviour
     [SerializeField] private Dictionary<Minerals, Color> mineralColors;
 
     public event Action<MachineryVars> OnMachineryFound;
+
+    private void Start()
+    {
+        OnMachineryFound += inventoryManager.InstanceMachineryOnInventory;
+    }
 
     public void SetupColorDictionary(List<MineralVars> minerals)
     {
@@ -25,7 +28,7 @@ public class MachineryManager : MonoBehaviour
         }
     }
 
-    private void PrepareMachinery(Minerals mineral)
+    public void PrepareMachinery(Minerals mineral)
     {
         foreach (var machinery in machineryVars) {
         
@@ -35,6 +38,8 @@ public class MachineryManager : MonoBehaviour
             }
         }
     }
+
+
 
 
 

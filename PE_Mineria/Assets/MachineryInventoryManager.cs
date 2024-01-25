@@ -10,21 +10,16 @@ public class MachineryInventoryManager : MonoBehaviour
 
     [SerializeField] private Transform itemInstanceTransform;
 
-    [SerializeField] private List<MachineryVars> machineryVars;
-
-    public class InventoryItem
-    {
-        public string machineryName;
-        public string machineryType;
-    }
-
     private void Start()
     {
         
     }
 
-    private void InstanceInitialMachinery()
+    public void InstanceMachineryOnInventory(MachineryVars machinery)
     {
-        new InventoryItem { };
+        GameObject instancedItem;
+        instancedItem = Instantiate(inventoryItem, itemInstanceTransform);
+        instancedItem.GetComponent<MachineryInventoryItem>().SetName(machinery.name);
+
     }
 }

@@ -34,6 +34,7 @@ public class MineralSlotsManager : MonoBehaviour
         foreach (MineralSlot slot in mineralSlots)
         { 
             GameManager.Instance.GetComponent<CycleManager>().OnDayPassed += slot.UnlockMineralSlot;
+            slot.OnMineralSlotUnlocked += GetComponent<MachineryManager>().PrepareMachinery;
         }
     }
 

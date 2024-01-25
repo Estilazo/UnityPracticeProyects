@@ -20,7 +20,7 @@ public class MineralSlot : MonoBehaviour
 
     private bool hasMachine;
 
-    public event Action<Minerals> onMineralSlotUnlocked;
+    public event Action<Minerals> OnMineralSlotUnlocked;
 
     private void Awake()
     {
@@ -41,7 +41,7 @@ public class MineralSlot : MonoBehaviour
             Debug.Log("activates");
             gameObject.SetActive(true);
             unlocked = true;
-            onMineralSlotUnlocked?.Invoke(slotType);
+            OnMineralSlotUnlocked?.Invoke(slotType);
         }
     }
 
