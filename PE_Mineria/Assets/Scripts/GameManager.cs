@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private UIManager uimanager;
 
-    [SerializeField] private GameObject machineryInventory;
+    public GameObject machineryPrefab;
+
+    public MachineryInventoryManager machineryInventory;
 
     private void Awake()
     {
@@ -30,10 +32,5 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("starts");
-    }
-
-    public void ActivateMachineryInventory()
-    {
-        machineryInventory.SetActive(true);
     }
 }

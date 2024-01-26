@@ -10,17 +10,23 @@ public class MineralSlot : MonoBehaviour
 
     [SerializeField] private bool unlocked;
 
-    [SerializeField] private Minerals slotType;
-
     [SerializeField] private GameObject mineralPlaneEdge;
 
     [SerializeField] private GameObject mineralPlane;
 
+    [SerializeField] private Transform machineryInstanceTransform;
+
     [SerializeField] private GameObject infoCanvas;
 
-    private bool hasMachine;
+    private Color slotColor;
+
+    public Minerals slotType;
+
+    public bool hasMachine;
 
     public event Action<Minerals> OnMineralSlotUnlocked;
+
+    public GameObject currentMachinery;
 
     private void Awake()
     {
@@ -58,6 +64,16 @@ public class MineralSlot : MonoBehaviour
     {
         mineralPlane.GetComponent<Renderer>().material.color = color;
         mineralPlaneEdge.GetComponent<Renderer>().material.color = color;
+        slotColor = color;
+    }
+
+    public void InstanceMachinery(MachineryVars machinery)
+    {
+        GameObject machineryPrefab = GameManager.Instance.machineryPrefab;
+        currentMachinery = Instantiate(machineryPrefab, machineryInstanceTransform.parent);
+
+        //Renderer r = currentMachinery.TryGetComponent<Renderer>(out rende).material.color = slotColor;
+
     }
 
     public void OnMouseOver()
@@ -72,6 +88,6 @@ public class MineralSlot : MonoBehaviour
     public void OnMouseDown()
     {
         if (hasMachine) { return; }
-        else GameManager.Instance.ActivateMachineryInventory();
+        else GameManager.Instance.machineryInventory.ActivateMachineryInventory(this);
     }
 }

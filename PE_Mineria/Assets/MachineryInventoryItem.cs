@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,26 @@ public class MachineryInventoryItem : MonoBehaviour
 {
     [SerializeField] private Text nameText;
 
-    public void SetName(string name)
+    [SerializeField] private Button pickButton;
+
+    private MachineryVars machineryToSpawn;
+
+    private void Start()
     {
+        pickButton.onClick.AddListener(OnPickButtonClicked);
+    }
 
-        nameText.text = name;
-
+    public void SetVars(MachineryVars machinery)
+    {
+        machineryToSpawn = machinery;
+        nameText.text = machinery.name;
 
     }
+
+    public void OnPickButtonClicked()
+    {
+        bool canSpawn = GameManager.Instance.machineryInventory.InstanceMachineOnSlot(machineryToSpawn);
+        if (canSpawn) { Destroy(this.gameObject); }
+    }
+
 }

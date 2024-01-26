@@ -10,16 +10,34 @@ public class MachineryInventoryManager : MonoBehaviour
 
     [SerializeField] private Transform itemInstanceTransform;
 
-    private void Start()
+    private MineralSlot slotToInstanceIn;
+
+
+    public void ActivateMachineryInventory(MineralSlot slot)
     {
-        
+        slotToInstanceIn = slot;
+        this.gameObject.SetActive(true);
     }
 
     public void InstanceMachineryOnInventory(MachineryVars machinery)
     {
         GameObject instancedItem;
         instancedItem = Instantiate(inventoryItem, itemInstanceTransform);
-        instancedItem.GetComponent<MachineryInventoryItem>().SetName(machinery.name);
 
+        MachineryInventoryItem itemScript = instancedItem.GetComponent<MachineryInventoryItem>();
+
+        itemScript.SetVars(machinery);
     }
+
+    public  bool InstanceMachineOnSlot(MachineryVars machinery)
+    {
+        if (!slotToInstanceIn.hasMachine && machinery.mineralType == slotToInstanceIn.slotType)
+        {
+            slotToInstanceIn.InstanceMachinery(machinery);
+            return true;
+        }
+        else return false;
+    }
+
+
 }

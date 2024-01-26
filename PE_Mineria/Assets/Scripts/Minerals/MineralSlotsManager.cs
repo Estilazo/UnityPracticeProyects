@@ -22,11 +22,6 @@ public class MineralSlotsManager : MonoBehaviour
     {
         SusbcribeMineralSlots();
         SetupMineralSlots();
-
-        if(mineralVars != null)
-        {
-            GetComponent<MachineryManager>().SetupColorDictionary(mineralVars);
-        }
     }
 
     private void SusbcribeMineralSlots()

@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &419452163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6524393258008702490, guid: d0e79f0a6f88fe3459e479951552b9ff, type: 3}
-  m_PrefabInstance: {fileID: 212236295269656351}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &419452164 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2839204290201594696, guid: d0e79f0a6f88fe3459e479951552b9ff, type: 3}
@@ -138,7 +133,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1052204443053709316, guid: d0e79f0a6f88fe3459e479951552b9ff, type: 3}
   m_PrefabInstance: {fileID: 212236295269656351}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419452163}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 905a09da5a8b45c42b2bb39e3fbc3b19, type: 3}
@@ -218,7 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cycleManager: {fileID: 689160049}
   uimanager: {fileID: 689160048}
-  machineryInventory: {fileID: 419452163}
+  machineryPrefab: {fileID: 4104575298966450885, guid: 04b83d173e25a8e428177e8992d3ca81, type: 3}
+  machineryInventory: {fileID: 419452165}
 --- !u!1 &820222630
 GameObject:
   m_ObjectHideFlags: 0
