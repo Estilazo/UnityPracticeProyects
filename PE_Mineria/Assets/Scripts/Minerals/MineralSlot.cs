@@ -78,16 +78,19 @@ public class MineralSlot : MonoBehaviour
 
     public void OnMouseOver()
     {
+        if (GameManager.Instance.machineryInventory.isActiveAndEnabled) { return; }
         infoCanvas.SetActive(true);
     }
     public void OnMouseExit()
     {
+        if (GameManager.Instance.machineryInventory.isActiveAndEnabled) { return; }
         infoCanvas.SetActive(false);
     }
 
     public void OnMouseDown()
     {
-        if (hasMachine) { return; }
+
+        if (hasMachine || GameManager.Instance.machineryInventory.isActiveAndEnabled) { return; }
         else GameManager.Instance.machineryInventory.ActivateMachineryInventory(this);
     }
 }

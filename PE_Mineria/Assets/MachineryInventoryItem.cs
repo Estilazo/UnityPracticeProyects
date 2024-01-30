@@ -27,7 +27,11 @@ public class MachineryInventoryItem : MonoBehaviour
     public void OnPickButtonClicked()
     {
         bool canSpawn = GameManager.Instance.machineryInventory.InstanceMachineOnSlot(machineryToSpawn);
-        if (canSpawn) { Destroy(this.gameObject); }
+        if (canSpawn)
+        {
+            Destroy(this.gameObject);
+            GameManager.Instance.machineryInventory.gameObject.SetActive(false);
+        }
     }
 
 }
