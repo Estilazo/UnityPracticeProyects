@@ -12,6 +12,9 @@ public class MachineryInventoryManager : MonoBehaviour
 
     private MineralSlot slotToInstanceIn;
 
+    private List<MachineryInventoryItem> inventoryItems = new();
+
+    private bool isFirst = true;
 
     public void ActivateMachineryInventory(MineralSlot slot)
     {
@@ -25,8 +28,16 @@ public class MachineryInventoryManager : MonoBehaviour
         instancedItem = Instantiate(inventoryItem, itemInstanceTransform);
 
         MachineryInventoryItem itemScript = instancedItem.GetComponent<MachineryInventoryItem>();
+        inventoryItems.Add(itemScript);
 
         itemScript.SetVars(machinery);
+        
+        isFirst = false;
+
+        if (!isFirst)
+        {
+            instancedItem.SetActive(false);
+        }
     }
 
     public  bool InstanceMachineOnSlot(MachineryVars machinery)
@@ -39,5 +50,18 @@ public class MachineryInventoryManager : MonoBehaviour
         else return false;
     }
 
+    public bool BuyMachinery(int id)
+    {
+        foreach(MachineryInventoryItem item in inventoryItems)
+        {
+            if(item.GetMachineryID() == id)
+            {
+                item.gameObject.SetActive(true);
+                return true;
+            }
+
+        }
+        return false;
+    }
 
 }

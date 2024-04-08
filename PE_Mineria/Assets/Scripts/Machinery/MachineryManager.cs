@@ -11,11 +11,17 @@ public class MachineryManager : MonoBehaviour
 
     public event Action<MachineryVars> OnMachineryFound;
 
+    
+
     private void Start()
     {
         OnMachineryFound += inventoryManager.InstanceMachineryOnInventory;
     }
 
+    /// <summary>
+    /// Instances the machinery correspondant to a type of mineral in the inventory.
+    /// </summary>
+    /// <param name="mineral">The type of mineral</param>
     public void PrepareMachinery(Minerals mineral)
     {
         foreach (var machinery in machineryVars) {
@@ -26,4 +32,6 @@ public class MachineryManager : MonoBehaviour
             }
         }
     }
+
+    public MachineryVars[] GetMachineryVarsList() { return machineryVars.ToArray(); }
 }

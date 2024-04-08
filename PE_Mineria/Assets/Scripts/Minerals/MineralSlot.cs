@@ -89,8 +89,12 @@ public class MineralSlot : MonoBehaviour
 
     public void OnMouseDown()
     {
-
+        //If doesn't have machine, open machinery inventory
         if (hasMachine || GameManager.Instance.machineryInventory.isActiveAndEnabled) { return; }
-        else GameManager.Instance.machineryInventory.ActivateMachineryInventory(this);
+        else
+        {
+            GameManager.Instance.machineryInventory.ActivateMachineryInventory(this);
+            infoCanvas.SetActive(false);
+        }
     }
 }

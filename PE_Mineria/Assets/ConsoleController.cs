@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class ConsoleController : MonoBehaviour
 {
-
+    [Header("Managers")]
+    [SerializeField] private MachineryManager machineryManager;
+    [SerializeField] private MachineryInventoryManager inventoryManager;
+    
+    [Space]
     [SerializeField] private InputField consoleInput;
-
     [SerializeField] private Transform consoleLog;
-
     [SerializeField] private GameObject textBox;
+
     private void OnEnable()
     {
         consoleInput.onEndEdit.AddListener(ConsoleFunctionCaller);  
@@ -35,12 +38,21 @@ public class ConsoleController : MonoBehaviour
         switch (functionName)
         {
             case "buy":
-
-                Debug.Log("buy function called");
+                if (inventoryManager.BuyMachinery(int.Parse(functionParameter)))
+                {
+                    InputText("Machinery bought");
+                }
+                else
+                {
+                    InputText("Machinery not found");
+                }
                 break;
 
             case "info":
-                Debug.Log("Info function called");
+                if (functionParameter.Equals("machinery"))
+                {
+                    InputText(GetInfoString());
+                }
                 break;
 
             default:
@@ -52,12 +64,20 @@ public class ConsoleController : MonoBehaviour
     public void InputText(string str)
     {
         Text text = Instantiate(textBox, consoleLog).GetComponent<Text>();
-        text.text = str;
+        text.text = str + "\n";
         consoleInput.text = string.Empty;
     }
-    public void debugIsCalling()
+
+    private string GetInfoString()
     {
-        Debug.Log("IsCalling");
+        MachineryVars[] machineryVars = machineryManager.GetMachineryVarsList();
+        string infoHeader = "ID | NAME | RESOURCE | COST | WORKFORCE";
+        string infoMachineries = string.Empty;
+        foreach (MachineryVars vars in  machineryVars)
+        {
+            infoMachineries += string.Concat("\n", "[", vars.machineryID, " | ", vars.name, " | ", vars.mineralType, " | ", vars.buyCost, " | ", vars.multiplier, "]");
+        }
+        return infoHeader + infoMachineries;
     }
 
 }

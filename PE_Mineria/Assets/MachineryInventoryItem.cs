@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +14,8 @@ public class MachineryInventoryItem : MonoBehaviour
 
     private MachineryVars machineryToSpawn;
 
+    private int machineryID;
+
     private void Start()
     {
         pickButton.onClick.AddListener(OnPickButtonClicked);
@@ -21,7 +25,7 @@ public class MachineryInventoryItem : MonoBehaviour
     {
         machineryToSpawn = machinery;
         nameText.text = machinery.name;
-
+        machineryID = machinery.machineryID;
     }
 
     public void OnPickButtonClicked()
@@ -33,5 +37,7 @@ public class MachineryInventoryItem : MonoBehaviour
             GameManager.Instance.machineryInventory.gameObject.SetActive(false);
         }
     }
+
+    public int GetMachineryID() { return machineryID; }
 
 }

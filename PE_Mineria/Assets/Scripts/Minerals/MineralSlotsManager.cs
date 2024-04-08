@@ -24,6 +24,9 @@ public class MineralSlotsManager : MonoBehaviour
         SetupMineralSlots();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     private void SusbcribeMineralSlots()
     {
         foreach (MineralSlot slot in mineralSlots)
